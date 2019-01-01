@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "NODE_ENV=\"development\" parcel *.html --hmr-port 42821",
+    "build": "NODE_ENV=\"production\" parcel build *.html"
+  },
+  "dependencies": {
+    "moon": "latest",
+    "moon-cli": "^1.0.0-beta.2"
+  },
+  "devDependencies": {
+    "parcel": "latest",
+    "parcel-plugin-moon": "latest"
+  },
+  "license": "MIT"
+}
