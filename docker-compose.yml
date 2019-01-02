@@ -2,7 +2,6 @@ version: '3'
 
 services:
   backend:
-    container_name: backend
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -13,7 +12,6 @@ services:
       - "./backend:/backend:rw"
 
   frontend:
-    container_name: frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -23,10 +21,9 @@ services:
       - "42821:42821"
     volumes:
       - "./frontend:/frontend:rw"
-
+      - /frontend/node_modules
   nginx:
     image: nginx:latest
-    container_name: dev_nginx
     volumes:
       - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
     ports:
