@@ -3,3 +3,5 @@
 */__pycache__
 */.cache
 frontend/node_modules/
+.env
+postgres-data/postgres/

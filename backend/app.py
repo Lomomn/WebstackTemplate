@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/api')
 def index():
-    return 'hello world!'
+    return jsonify({"message": "hello world"})
