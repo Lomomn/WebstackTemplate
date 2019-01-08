@@ -8,4 +8,4 @@ ENV FLASK_APP=app.py
 ENV FLASK_ENV=development
 
 COPY . /backend
-CMD uwsgi --ini uwsgi.ini
+CMD uwsgi --ini uwsgi.ini --need-app

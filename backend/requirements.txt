@@ -1,4 +1,5 @@
 flask
 uwsgi
 flask-sqlalchemy
-flask-restful
+flask-restplus
+psycopg2-binary
