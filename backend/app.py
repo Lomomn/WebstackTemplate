@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from api import blueprint as api
+from api.models import db
 import os
 
 app = Flask(__name__)
@@ -10,14 +10,18 @@ app.config['SQLALCHEMY_DATABASE_URI'] = '{dialect}://{user}:{password}@{uri}/{db
     password=os.environ.get('POSTGRES_PASSWORD'),
     uri=os.environ.get('SQLALCHEMY_DATABASE_URI'),
     db=os.environ.get('POSTGRES_DB'))
-db = SQLAlchemy(app)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
+
+app.config['RESTPLUS_VALIDATE'] = True
 
 app.register_blueprint(api, url_prefix='/api')
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
 
-    def __repr__(self):
-        return '<User %r>' % self.username
+def create_db():
+    with app.app_context():
+        db.create_all()
+
+def drop_db():
+    with app.app_context():
+        db.drop_all()

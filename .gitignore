@@ -1,8 +1,8 @@
-*/node_modules
-*/dist
-__pycache__
-*/.cache
-*/venv
-frontend/node_modules/
+**/node_modules
+**/dist
+**/__pycache__
+**/.cache
+**/venv
+**/node_modules/
 .env
 postgres-data/postgres/
