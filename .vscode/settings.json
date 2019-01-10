@@ -1,8 +1,10 @@
 {
     "python.linting.pylintEnabled": false,
+    "python.venvPath": "${workspaceFolder}/backend",
     "git.ignoreLimitWarning": true,
     "javascript.validate.enable": false,
     "files.exclude": {
         "**/__pycache__": true
-    }
+    },
+    "python.pythonPath": "backend/venv/bin/python"
 }
