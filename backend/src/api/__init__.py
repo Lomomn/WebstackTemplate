@@ -48,8 +48,6 @@ class UsersResource(Resource):
         return newUser
         
 
-
-
 @api.route('/user/<username>')
 class UserResource(Resource):
 

@@ -1,11 +1,11 @@
 FROM python:3.6
 
 WORKDIR /backend
-COPY requirements.txt /backend
-RUN pip install -r requirements.txt
-
-ENV FLASK_APP=app.py
+COPY . /backend
+RUN pip install -e .
+RUN pip install '.[test]'
+ENV FLASK_APP=src
 ENV FLASK_ENV=development
 
-COPY . /backend
+WORKDIR /backend/src
 CMD uwsgi --ini uwsgi.ini --need-app

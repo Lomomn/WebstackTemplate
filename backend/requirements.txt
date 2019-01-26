@@ -1,5 +1,0 @@
-flask
-uwsgi
-flask-sqlalchemy
-flask-restplus
-psycopg2-binary
