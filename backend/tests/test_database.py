@@ -1,11 +1,6 @@
 import os
 import sys
+from . import client
 
-import pytest
-import src
-
-@pytest.fixture
-def client():
-
-
-    print(src, 'ok cool ')
+def test_client_exists(client):
+    assert client != None

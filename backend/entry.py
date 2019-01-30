@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
 import os
 import sys
-from api import blueprint as api
-from api.models import db
+from src.api import blueprint as api
+from src.api.models import db
 
 
 def setup_config(testing=False):

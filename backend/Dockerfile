@@ -4,8 +4,8 @@ WORKDIR /backend
 COPY . /backend
 RUN pip install -e .
 RUN pip install '.[test]'
-ENV FLASK_APP=src
+ENV FLASK_APP=entry
 ENV FLASK_ENV=development
 
-WORKDIR /backend/src
+WORKDIR /backend
 CMD uwsgi --ini uwsgi.ini --need-app
