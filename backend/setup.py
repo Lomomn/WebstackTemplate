@@ -24,6 +24,7 @@ setup(
         'test': [
             'pytest',
             'coverage',
+            'sqlalchemy-utils',
         ],
     },
 )

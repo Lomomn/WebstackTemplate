@@ -12,11 +12,14 @@ h1 {
 <script>
 export default {
 	content: "Moon",
+
+	onCreate(){
+		console.log('created', this)
+		
+	},
 	
 	updateContent(){
-		console.log('hihi')
 		axios.get('/api').then(res => {
-			console.log(res.data)
 			this.update('content', res.data.message);
 		});
 	}

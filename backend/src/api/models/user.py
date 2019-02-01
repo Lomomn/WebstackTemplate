@@ -1,6 +1,7 @@
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
-from itsdangerous import BadSignature, SignatureExpired, JSONWebSignatureSerializer as Serializer
+from itsdangerous import BadSignature, SignatureExpired, TimedJSONWebSignatureSerializer as Serializer
+from flask import current_app as app
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
